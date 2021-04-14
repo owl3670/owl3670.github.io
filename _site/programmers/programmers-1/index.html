@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>프로그래머스 완주하지 못한 선수 [Python] - 꾸어어억의 블로그</title>
+<!-- begin _includes/seo.html --><title>[프로그래머스][Python] 완주하지 못한 선수 - 꾸어어억의 블로그</title>
 <meta name="description" content="난이도 : 프로그래머스 Level 1">
 
 
@@ -22,8 +22,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="꾸어어억의 블로그">
-<meta property="og:title" content="프로그래머스 완주하지 못한 선수 [Python]">
-<meta property="og:url" content="http://localhost:4000/programmers/practice1/">
+<meta property="og:title" content="[프로그래머스][Python] 완주하지 못한 선수">
+<meta property="og:url" content="http://localhost:4000/programmers/programmers-1/">
 
 
   <meta property="og:description" content="난이도 : 프로그래머스 Level 1">
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/programmers/practice1/">
+<link rel="canonical" href="http://localhost:4000/programmers/programmers-1/">
 
 
 
@@ -70,6 +70,7 @@
 
 
 
+
   <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="꾸어어억의 블로그 Feed">
 
 
@@ -83,6 +84,23 @@
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/logo.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/logo.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/logo.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/logo.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/logo.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/logo.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/logo.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/logo.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/logo.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/logo.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/logo.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/logo.ico/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 
 <!--[if IE]>
   <style>
@@ -98,6 +116,7 @@
     }
   </style>
 <![endif]-->
+
 
 
     <!-- start custom head snippets -->
@@ -163,6 +182,12 @@
 
 <div itemscope itemtype="https://schema.org/Person">
 
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/avatar.png" alt="꾸어어억" itemprop="image">
+      
+    </div>
   
 
   <div class="author__content">
@@ -269,7 +294,7 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="프로그래머스 완주하지 못한 선수 [Python]">
+    <meta itemprop="headline" content="[프로그래머스][Python] 완주하지 못한 선수">
     <meta itemprop="description" content="난이도 : 프로그래머스 Level 1">
     <meta itemprop="datePublished" content="2021-03-31T00:00:00+09:00">
     
@@ -277,25 +302,21 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">프로그래머스 완주하지 못한 선수 [Python]
+          <h1 id="page-title" class="page__title" itemprop="headline">[프로그래머스][Python] 완주하지 못한 선수
 </h1>
           
 
   <p class="page__meta">
     
-
-    
-
-    
       
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-03-31T00:00:00+09:00">March 31, 2021</time>
       </span>
+    
+
+    
+
     
   </p>
 
@@ -358,21 +379,32 @@
 </table>
 
 <h3 id="입출력-예-설명">입출력 예 설명</h3>
-<p>예제 #1
-“leo”는 참여자 명단에는 있지만, 완주자 명단에는 없기 때문에 완주하지 못했습니다.</p>
+<p>예제 #1 “leo”는 참여자 명단에는 있지만, 완주자 명단에는 없기 때문에 완주하지 못했습니다.</p>
 
-<p>예제 #2
-“vinko”는 참여자 명단에는 있지만, 완주자 명단에는 없기 때문에 완주하지 못했습니다.</p>
+<p>예제 #2 “vinko”는 참여자 명단에는 있지만, 완주자 명단에는 없기 때문에 완주하지 못했습니다.</p>
 
-<p>예제 #3
-“mislav”는 참여자 명단에는 두 명이 있지만, 완주자 명단에는 한 명밖에 없기 때문에 한명은 완주하지 못했습니다.</p>
+<p>예제 #3 “mislav”는 참여자 명단에는 두 명이 있지만, 완주자 명단에는 한 명밖에 없기 때문에 한명은 완주하지 못했습니다.</p>
 
 <h3 id="나의-풀이">나의 풀이</h3>
 <p>문제 조건중 단 한 명의 선수만이 마라톤을 완주하지 못했다는 것에서 생각을 출발하였는데,
 주어진 입력 participant, completion 을 각각 정렬 후 앞에서 부터 같은 index의 요소끼리 순차적으로 비교시 
-completion 에 없는 한 명의 선수를 찾아낼 수 있다는 생각으로 다음과 같은 코드를 작성했다.</p>
+completion 에 없는 한 명의 선수를 찾아낼 수 있다는 생각으로 다음과 같이 코드를 작성했다.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">participant</span><span class="p">,</span> <span class="n">completion</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">participant</span><span class="p">,</span> <span class="n">completion</span><span class="p">):</span>
     <span class="n">answer</span> <span class="o">=</span> <span class="s">''</span>
     
     <span class="n">participant</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
@@ -383,10 +415,13 @@ completion 에 없는 한 명의 선수를 찾아낼 수 있다는 생각으로 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">completion</span><span class="p">)):</span>
         <span class="k">if</span><span class="p">(</span><span class="n">participant</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">completion</span><span class="p">[</span><span class="n">i</span><span class="p">]):</span>
             <span class="n">answer</span> <span class="o">=</span> <span class="n">participant</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="k">break</span><span class="p">;</span>
+            <span class="k">break</span>
     
     <span class="k">return</span> <span class="n">answer</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>completion의 길이만큼 비교를 하더라도 다른요소가 없을 시에는 participant의 마지막이 완주하지 못한 선수이기에 answer 변수에 participant의 마지막 요소를 담고 루프를 돌렸다.</p>
+
+<p>문제 출처 : <a href="https://programmers.co.kr/learn/challenges" target="_blank">프로그래머스 코딩테스트 연습</a></p>
 
         
       </section>
@@ -422,15 +457,25 @@ completion 에 없는 한 명의 선수를 찾아낼 수 있다는 생각으로 
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4+%EC%99%84%EC%A3%BC%ED%95%98%EC%A7%80+%EB%AA%BB%ED%95%9C+%EC%84%A0%EC%88%98+%5BPython%5D%20http%3A%2F%2Flocalhost%3A4000%2Fprogrammers%2Fpractice1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%5D%5BPython%5D+%EC%99%84%EC%A3%BC%ED%95%98%EC%A7%80+%EB%AA%BB%ED%95%9C+%EC%84%A0%EC%88%98%20http%3A%2F%2Flocalhost%3A4000%2Fprogrammers%2Fprogrammers-1%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fprogrammers%2Fpractice1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fprogrammers%2Fprogrammers-1%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fprogrammers%2Fpractice1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fprogrammers%2Fprogrammers-1%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">이전</a>
+    
+    
+      <a href="/programmers/programmers-2/" class="pagination--pager" title="[프로그래머스][Python] 두 개 뽑아서 더하기
+">다음</a>
+    
+  </nav>
+
     </div>
 
     
@@ -443,9 +488,160 @@ completion 에 없는 한 명의 선수를 찾아낼 수 있다는 생각으로 
       <div class="grid__wrapper">
         
           
-            
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/programmers-3/" rel="permalink">[프로그래머스][Python] 정수 삼각형
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-04-14T00:00:00+09:00">April 14, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">난이도 : 프로그래머스 Level 3
+문제 모음 : 코팅테스트 고득점 Kit 동적계획법
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/backend/backend-roadmap-2021/" rel="permalink">[Backend] 2021 로드맵
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-04-14T00:00:00+09:00">April 14, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Backend를 심도있게 공부하기 위해 로드맵을 선택하여 따라가보고자 한다.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/diary/diary-21-04-06/" rel="permalink">[생각 정리] 2021-04-06
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-04-06T00:00:00+09:00">April 6, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">나의 기억력은 영원하지 않다는걸 인정하고 기록을 시작해야 한다.
+새로운 기술을 접하고 내 것으로 만들기 위해서는 나의 이해와 생각을 토대로 정리를 해봐야 한다.
+이제 블로그를 시작하며, 지금의 다짐을 잊지 말고 계속 전진해야 한다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/sqlite/sqlite-insert-or-replace/" rel="permalink">[SQLite] INSERT OR REPLACE
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-04-01T00:00:00+09:00">April 1, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">개요
+데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다.
+Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는데 SQLite에도 비슷한 기능을 하는 문법이 존재한다.
+
+</p>
+  </article>
+</div>
+
+        
       </div>
     </div>
+  
   
 </div>
 
@@ -486,7 +682,7 @@ completion 에 없는 한 명의 선수를 찾아낼 수 있다는 생각으로 
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2021 꾸어어억. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2021 꾸어어억. Powered by</div>
 
       </footer>
     </div>

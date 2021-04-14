@@ -11,7 +11,7 @@ toc_label: "Index"
 toc_icon: "list"
 ---
 
-난이도 : 프로그래머스 Level 1
+난이도 : 프로그래머스 Level 1  
 문제 모음 : 월간 코드 챌린지 시즌1
 
 ### 문제 설명
@@ -58,3 +58,5 @@ def solution(numbers):
     
     return answer
 ```
+
+문제 출처 : [프로그래머스 코딩테스트 연습](https://programmers.co.kr/learn/challenges){: target="_blank"}

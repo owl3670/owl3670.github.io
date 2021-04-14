@@ -9,28 +9,32 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>꾸어어억의 블로그</title>
-<meta name="description" content="">
+<!-- begin _includes/seo.html --><title>[프로그래머스][Python] 두 개 뽑아서 더하기 - 꾸어어억의 블로그</title>
+<meta name="description" content="난이도 : 프로그래머스 Level 1 문제 모음 : 월간 코드 챌린지 시즌1">
 
 
   <meta name="author" content="꾸어어억">
   
+  <meta property="article:author" content="꾸어어억">
+  
 
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="꾸어어억의 블로그">
-<meta property="og:title" content="꾸어어억의 블로그">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="[프로그래머스][Python] 두 개 뽑아서 더하기">
+<meta property="og:url" content="http://localhost:4000/programmers/programmers-2/">
 
 
-  <meta property="og:description" content="">
-
-
-
+  <meta property="og:description" content="난이도 : 프로그래머스 Level 1 문제 모음 : 월간 코드 챌린지 시즌1">
 
 
 
+
+
+
+
+  <meta property="article:published_time" content="2021-03-31T00:00:00+09:00">
 
 
 
@@ -41,11 +45,9 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/">
+<link rel="canonical" href="http://localhost:4000/programmers/programmers-2/">
 
 
-
-  <link rel="next" href="http://localhost:4000/page2/">
 
 
 <script type="application/ld+json">
@@ -125,7 +127,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--single">
     <nav class="skip-links">
   <h2 class="screen-reader-text">Skip links</h2>
   <ul>
@@ -291,24 +293,195 @@
 
 
 
-  <div class="archive">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[프로그래머스][Python] 두 개 뽑아서 더하기">
+    <meta itemprop="description" content="난이도 : 프로그래머스 Level 1문제 모음 : 월간 코드 챌린지 시즌1">
+    <meta itemprop="datePublished" content="2021-03-31T00:00:00+09:00">
     
-      <h1 id="page-title" class="page__title"></h1>
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[프로그래머스][Python] 두 개 뽑아서 더하기
+</h1>
+          
+
+  <p class="page__meta">
     
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-03-31T00:00:00+09:00">March 31, 2021</time>
+      </span>
     
 
-<h3 class="archive__subtitle">최근 포스트</h3>
+    
+
+    
+  </p>
 
 
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-list"></i> Index</h4></header>
+              <ul class="toc__menu"><li><a href="#문제-설명">문제 설명</a></li><li><a href="#제한사항">제한사항</a></li><li><a href="#입출력-예">입출력 예</a></li><li><a href="#입출력-예-설명">입출력 예 설명</a></li><li><a href="#나의-풀이">나의 풀이</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>난이도 : 프로그래머스 Level 1<br />
+문제 모음 : 월간 코드 챌린지 시즌1</p>
+
+<h3 id="문제-설명">문제 설명</h3>
+<p>정수 배열 numbers가 주어집니다. numbers에서 서로 다른 인덱스에 있는 두 개의 수를 뽑아 더해서 만들 수 있는 모든 수를 배열에 오름차순으로 담아 return 하도록 solution 함수를 완성해주세요.</p>
+
+<h3 id="제한사항">제한사항</h3>
+<ul>
+  <li>numbers의 길이는 2 이상 100 이하입니다.
+    <ul>
+      <li>numbers의 모든 수는 0 이상 100 이하입니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="입출력-예">입출력 예</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>numbers</th>
+      <th>result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[2, 1, 3, 4, 1]</td>
+      <td>[2, 3, 4, 5, 6, 7]</td>
+    </tr>
+    <tr>
+      <td>[5,0,2,7]</td>
+      <td>[2,5,7,9,12]</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="입출력-예-설명">입출력 예 설명</h3>
+<p>입출력 예 #1</p>
+<ul>
+  <li>2 = 1 + 1 입니다. (1이 numbers에 두 개 있습니다.)</li>
+  <li>3 = 2 + 1 입니다.</li>
+  <li>4 = 1 + 3 입니다.</li>
+  <li>5 = 1 + 4 = 2 + 3 입니다.</li>
+  <li>6 = 2 + 4 입니다.</li>
+  <li>7 = 3 + 4 입니다.</li>
+  <li>따라서 [2,3,4,5,6,7] 을 return 해야 합니다.
+입출력 예 #2</li>
+  <li>2 = 0 + 2 입니다.</li>
+  <li>5 = 5 + 0 입니다.</li>
+  <li>7 = 0 + 7 = 5 + 2 입니다.</li>
+  <li>9 = 2 + 7 입니다.</li>
+  <li>12 = 5 + 7 입니다.</li>
+  <li>따라서 [2,5,7,9,12] 를 return 해야 합니다.</li>
+</ul>
+
+<h3 id="나의-풀이">나의 풀이</h3>
+<p>리스트의 서로 다른 인덱스의 수 두개를 뽑아내어 더한 후 중복을 제거하고 정렬하면 간단히 해결이 된다 생각하였다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">numbers_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="n">num</span> <span class="o">+</span> <span class="n">numbers</span><span class="p">[</span><span class="n">idx2</span><span class="p">]</span> <span class="k">for</span> <span class="n">idx1</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+                          <span class="k">for</span> <span class="n">idx2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">idx1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">numbers_len</span><span class="p">)]</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">answer</span><span class="p">))</span>
+    <span class="n">answer</span><span class="p">.</span><span class="n">sort</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">answer</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>문제 출처 : <a href="https://programmers.co.kr/learn/challenges" target="_blank">프로그래머스 코딩테스트 연습</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
 
 
-<div class="entries-list">
   
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
     
+      <a href="/categories/#programmers" class="page__taxonomy-item" rel="tag">Programmers</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-31T00:00:00+09:00">March 31, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4%5D%5BPython%5D+%EB%91%90+%EA%B0%9C+%EB%BD%91%EC%95%84%EC%84%9C+%EB%8D%94%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fprogrammers%2Fprogrammers-2%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fprogrammers%2Fprogrammers-2%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fprogrammers%2Fprogrammers-2%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/programmers/programmers-1/" class="pagination--pager" title="[프로그래머스][Python] 완주하지 못한 선수
+">이전</a>
+    
+    
+      <a href="/sqlite/sqlite-insert-or-replace/" class="pagination--pager" title="[SQLite] INSERT OR REPLACE
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -341,12 +514,12 @@
   </article>
 </div>
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -378,12 +551,12 @@
   </article>
 </div>
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -416,12 +589,12 @@
   </article>
 </div>
 
-  
-    
+        
+          
 
 
 
-<div class="list__item">
+<div class="grid__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
@@ -455,88 +628,13 @@ Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는
   </article>
 </div>
 
+        
+      </div>
+    </div>
   
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/programmers/programmers-2/" rel="permalink">[프로그래머스][Python] 두 개 뽑아서 더하기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-03-31T00:00:00+09:00">March 31, 2021</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">난이도 : 프로그래머스 Level 1
-문제 모음 : 월간 코드 챌린지 시즌1
-
-</p>
-  </article>
-</div>
-
   
 </div>
 
-
-<nav class="pagination">
-  
-  <ul>
-    
-    
-    <li><a href="#" class="disabled"><span aria-hidden="true">이전</span></a></li>
-    
-
-    
-    
-      <li><a href="#" class="disabled current">1</a></li>
-    
-
-    
-    
-
-    
-    
-    
-
-    
-
-    
-    
-
-    
-      <li><a href="/page2/">2</a></li>
-    
-
-    
-    
-      <li><a href="/page2/">다음</a></li>
-    
-  </ul>
-</nav>
-
-
-
-  </div>
-</div>
     </div>
 
     

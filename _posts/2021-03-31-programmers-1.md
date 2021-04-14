@@ -56,8 +56,10 @@ def solution(participant, completion):
     for i in range(len(completion)):
         if(participant[i] != completion[i]):
             answer = participant[i]
-            break;
+            break
     
     return answer
 ```
 completion의 길이만큼 비교를 하더라도 다른요소가 없을 시에는 participant의 마지막이 완주하지 못한 선수이기에 answer 변수에 participant의 마지막 요소를 담고 루프를 돌렸다.
+
+문제 출처 : [프로그래머스 코딩테스트 연습](https://programmers.co.kr/learn/challenges){: target="_blank"}

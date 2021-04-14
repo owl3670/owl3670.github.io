@@ -1,0 +1,864 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[SQLite] INSERT OR REPLACE - 꾸어어억의 블로그</title>
+<meta name="description" content="개요 데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다. Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는데 SQLite에도 비슷한 기능을 하는 문법이 존재한다.">
+
+
+  <meta name="author" content="꾸어어억">
+  
+  <meta property="article:author" content="꾸어어억">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="꾸어어억의 블로그">
+<meta property="og:title" content="[SQLite] INSERT OR REPLACE">
+<meta property="og:url" content="http://localhost:4000/sqlite/sqlite-insert-or-replace/">
+
+
+  <meta property="og:description" content="개요 데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다. Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는데 SQLite에도 비슷한 기능을 하는 문법이 존재한다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-01T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/sqlite/sqlite-insert-or-replace/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "꾸어어억",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="꾸어어억의 블로그 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+<link rel="apple-touch-icon" sizes="57x57" href="/assets/logo.ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/assets/logo.ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/assets/logo.ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/assets/logo.ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/assets/logo.ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/assets/logo.ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/assets/logo.ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/assets/logo.ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/logo.ico/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/assets/logo.ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo.ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/logo.ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/logo.ico/favicon-16x16.png">
+<link rel="manifest" href="/assets/logo.ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/logo.ico/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          꾸어어억의 블로그
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">All Posts</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/avatar.png" alt="꾸어어억" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">꾸어어억</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">South Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/owl3670" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[SQLite] INSERT OR REPLACE">
+    <meta itemprop="description" content="개요데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다.Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는데 SQLite에도 비슷한 기능을 하는 문법이 존재한다.">
+    <meta itemprop="datePublished" content="2021-04-01T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[SQLite] INSERT OR REPLACE
+</h1>
+          
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-04-01T00:00:00+09:00">April 1, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-list"></i> Index</h4></header>
+              <ul class="toc__menu"><li><a href="#개요">개요</a></li><li><a href="#문법">문법</a></li><li><a href="#사용-예시">사용 예시</a></li><li><a href="#더-알아보기">더 알아보기</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h3 id="개요">개요</h3>
+<p>데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다.<br />
+Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는데 SQLite에도 비슷한 기능을 하는 문법이 존재한다.</p>
+
+<h3 id="문법">문법</h3>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">INSERT</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">INTO</span><span class="p">[</span><span class="k">TABLE</span><span class="p">]</span>
+<span class="p">(</span><span class="n">COLUMN1</span><span class="p">,</span> <span class="n">COLUMN2</span><span class="p">,</span> <span class="p">...)</span>
+<span class="k">VALUES</span>
+<span class="p">(</span><span class="n">VALUES1</span><span class="p">,</span> <span class="n">VALUES2</span><span class="p">,</span> <span class="p">...)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>문법은 기존 INSERT INTO 에 OR REPLACE INTO 가 추가된것 뿐인 형태로 사용할 수도 있고</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">REPLACE</span> <span class="k">INTO</span><span class="p">[</span><span class="k">TABLE</span><span class="p">]</span>
+<span class="p">(</span><span class="n">COLUMN1</span><span class="p">,</span> <span class="n">COLUMN2</span><span class="p">,</span> <span class="p">...)</span>
+<span class="k">VALUES</span>
+<span class="p">(</span><span class="n">VALUES1</span><span class="p">,</span> <span class="n">VALUES2</span><span class="p">,</span> <span class="p">...)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>이와 같이 축약하여 REPLACE INTO 만 사용할 수도 있다.</p>
+
+<h3 id="사용-예시">사용 예시</h3>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">employee</span> <span class="p">(</span>
+	<span class="n">id</span> <span class="nb">integer</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+	<span class="n">name</span> <span class="nb">text</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+	<span class="n">salary</span> <span class="nb">numeric</span>
+<span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>우선 테이블을 위와 같이 만들어 낸다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">employee</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="s1">'Kim'</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">'Seo'</span><span class="p">,</span> <span class="mi">220</span><span class="p">),</span>
+       <span class="p">(</span><span class="s1">'Jeong'</span><span class="p">,</span> <span class="mi">210</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>위와 같이 데이터를 집어넣는다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Kim</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Seo</td>
+      <td>220</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Jeong</td>
+      <td>210</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>조회시 위와 같이 데이터가 들어있는 것을 확인 할 수 있다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="k">REPLACE</span> <span class="k">INTO</span> <span class="n">employee</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'Kang'</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>새로운 데이터를 REPLACE 를 사용하여 집어넣는다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Kim</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Seo</td>
+      <td>220</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Jeong</td>
+      <td>210</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Kang</td>
+      <td>200</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>id : 4</strong>인 Row는 존재하지 않았기에 위와 같이 새로운 Row가 추가되어있다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="k">REPLACE</span> <span class="k">INTO</span> <span class="n">employee</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'Cha'</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>REPLACE 로 같은 내용에서 salary만 바꾸어 집어넣는다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Kim</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Seo</td>
+      <td>220</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Jeong</td>
+      <td>210</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Cha</td>
+      <td>300</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>id : 4</strong>인 Row 가 존재하기에 위와 같이 새로운 Row의 추가없이 <strong>id : 4</strong>인 Row의 데이터만 바뀌어 있는 것을 확인 할 수 있다.</p>
+
+<h3 id="더-알아보기">더 알아보기</h3>
+<p>REPLACE 는 UNIQUE나 PRIMARY KEY 제약조건이 위배됨을 감지하여 제약조건이 위배된 ROW를 찾아 DELETE를 수행하고
+명령을 다시 수행하는 형태로 동작하게 된다.
+때문에 INSERT OR UPDATE라고 생각하고 사용하면 맞지 않는다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">CREATE</span> <span class="k">UNIQUE</span> <span class="k">INDEX</span> <span class="n">idx_employee_name</span> <span class="k">ON</span> <span class="n">positions</span> <span class="p">(</span><span class="n">name</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>아까 만든 테이블에서 name COLUMN에 UNIQUE 제약조건을 추가 한다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="k">REPLACE</span> <span class="k">INTO</span> <span class="n">employee</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'Cha'</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>REPLACE 를 사용해 <strong>id : 5</strong>인 Row를 추가하려 하면 <strong>name : ‘Cha’</strong> 가 제약조건에 위배되어 실행되지 않아야 하지만
+REPLACE는 충돌이 발생한 Row를 DELETE 시키고 명령을 진행하게된다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Kim</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Seo</td>
+      <td>220</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Jeong</td>
+      <td>210</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Cha</td>
+      <td>300</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>따라서 위와같이 <strong>id : 4</strong>인 Row가 DELETE 되고 <strong>id : 5</strong>인 Row가 Insert 되게 된다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="k">REPLACE</span> <span class="k">INTO</span> <span class="n">employee</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'Cha'</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>제약조건이 위배되는 Row가 여러개여도 모두 DELETE 후 명령을 실행하게 되는데, 위와 같이 id와 name Column의 제약조건이 모두 위배되게 REPLACE를 사용한다면</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Kim</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Seo</td>
+      <td>220</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Cha</td>
+      <td>200</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Table에서 제약조건이 위배된 모든 Row를 DELETE 후 명령이 실행되어진 것을 확인 할 수 있다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#sqlite" class="page__taxonomy-item" rel="tag">SQLite</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-01T00:00:00+09:00">April 1, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BSQLite%5D+INSERT+OR+REPLACE%20http%3A%2F%2Flocalhost%3A4000%2Fsqlite%2Fsqlite-insert-or-replace%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fsqlite%2Fsqlite-insert-or-replace%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fsqlite%2Fsqlite-insert-or-replace%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/programmers/programmers-2/" class="pagination--pager" title="[프로그래머스][Python] 두 개 뽑아서 더하기
+">이전</a>
+    
+    
+      <a href="/diary/diary-21-04-06/" class="pagination--pager" title="[생각 정리] 2021-04-06
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/programmers-3/" rel="permalink">[프로그래머스][Python] 정수 삼각형
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-04-14T00:00:00+09:00">April 14, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">난이도 : 프로그래머스 Level 3
+문제 모음 : 코팅테스트 고득점 Kit 동적계획법
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/backend/backend-roadmap-2021/" rel="permalink">[Backend] 2021 로드맵
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-04-14T00:00:00+09:00">April 14, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Backend를 심도있게 공부하기 위해 로드맵을 선택하여 따라가보고자 한다.
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/diary/diary-21-04-06/" rel="permalink">[생각 정리] 2021-04-06
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-04-06T00:00:00+09:00">April 6, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">나의 기억력은 영원하지 않다는걸 인정하고 기록을 시작해야 한다.
+새로운 기술을 접하고 내 것으로 만들기 위해서는 나의 이해와 생각을 토대로 정리를 해봐야 한다.
+이제 블로그를 시작하며, 지금의 다짐을 잊지 말고 계속 전진해야 한다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/programmers/programmers-2/" rel="permalink">[프로그래머스][Python] 두 개 뽑아서 더하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-03-31T00:00:00+09:00">March 31, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">난이도 : 프로그래머스 Level 1
+문제 모음 : 월간 코드 챌린지 시즌1
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 꾸어어억. Powered by</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
