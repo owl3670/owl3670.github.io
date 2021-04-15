@@ -39,7 +39,7 @@ toc_icon: "list"
  * 따라서 [2,3,4,5,6,7] 을 return 해야 합니다.
 입출력 예 #2
  * 2 = 0 + 2 입니다.
- * 5 = 5 + 0 입니다.
+ * 5 = 5 + 0 입니다.ㄴ
  * 7 = 0 + 7 = 5 + 2 입니다.
  * 9 = 2 + 7 입니다.
  * 12 = 5 + 7 입니다.
@@ -59,4 +59,5 @@ def solution(numbers):
     return answer
 ```
 
-문제 출처 : [프로그래머스 코딩테스트 연습](https://programmers.co.kr/learn/challenges){: target="_blank"}
+### 문제 출처 
+* [프로그래머스 코딩테스트 연습](https://programmers.co.kr/learn/challenges){: target="_blank"}

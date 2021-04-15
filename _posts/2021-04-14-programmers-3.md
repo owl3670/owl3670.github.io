@@ -53,4 +53,5 @@ solution = lambda t, l = []: max(l) if not t else solution(t[1:], [max(x,y)+z fo
 람다와 list slice, list comprehension, zip, 재귀함수 개념등이 들어가서 한줄 코드로 끝난 풀이인데 나의 풀이랑은 반대로 삼각형의 꼭대기에서 부터 계산을 해나가는 방식이다.  
 계산의 편의를 위해 연산 결과값의 list 처음과 끝에 각각 0을 붙여놓고 zip 과 list comprehension으로 결과 값의 list를 점차 만들어 가는 것이 너무 멋진 코드인 것 같다.
 
-문제 출처 : [프로그래머스 코딩테스트 연습](https://programmers.co.kr/learn/courses/30/parts/12263){: target="_blank"}
+### 문제 출처
+* [프로그래머스 코딩테스트 연습](https://programmers.co.kr/learn/courses/30/parts/12263){: target="_blank"}

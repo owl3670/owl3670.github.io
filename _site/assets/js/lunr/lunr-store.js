@@ -23,8 +23,14 @@ var store = [{
         "url": "/diary/diary-21-04-06/",
         "teaser": null
       },{
+        "title": "[Python] itertools 조합형",
+        "excerpt":"개요 Python의 표준 라이브러리중 효율적인 반복작업을 위한 함수를 모은 itertools 모듈에는 조합을 위한 함수들이 존재하는데 이를 자세히 알아보려 한다. 종류 함수 설명 product(*args, repeat=1) cartesian product (곱집합) permutations(iterable, r=None) 길이 r의 튜플들이며, 반복되는 요소 없이 모든 가능한 조합들이다 combinations(iterable, r) 길이 r의 튜플들이며, 반복되는 요소 없이 정렬된 순서의 조합들이다 combinations_with_replacement(iterable,...","categories": ["Python"],
+        "tags": [],
+        "url": "/python/python-itertools-combinatoric/",
+        "teaser": null
+      },{
         "title": "[Backend] 2021 로드맵",
-        "excerpt":"Backend를 심도있게 공부하기 위해 로드맵을 선택하여 따라가보고자 한다.      출처 : https://roadmap.sh/backend  ","categories": ["Backend"],
+        "excerpt":"Backend를 심도있게 공부하기 위해 로드맵을 선택하여 따라가보고자 한다.      출처     https://roadmap.sh/backend  ","categories": ["Backend"],
         "tags": [],
         "url": "/backend/backend-roadmap-2021/",
         "teaser": null
@@ -33,5 +39,11 @@ var store = [{
         "excerpt":"난이도 : 프로그래머스 Level 3 문제 모음 : 코팅테스트 고득점 Kit 동적계획법 문제 설명 위와 같은 삼각형의 꼭대기에서 바닥까지 이어지는 경로 중, 거쳐간 숫자의 합이 가장 큰 경우를 찾아보려고 합니다. 아래 칸으로 이동할 때는 대각선 방향으로 한 칸 오른쪽 또는 왼쪽으로만 이동 가능합니다. 예를 들어 3에서는 그 아래칸의 8 또는...","categories": ["Programmers"],
         "tags": [],
         "url": "/programmers/programmers-3/",
+        "teaser": null
+      },{
+        "title": "[Backend] 인터넷은 어떻게 동작하는가?",
+        "excerpt":"Backend 2021 로드맵 중 인터넷의 동작원리를 공부해보고자 한다. 개요 1969년 미국 국방부의 주도하에 만들어진 ARPAnet(Advanced Research Projects Agency)이 등장하며 인터넷의 시작을 알렸다. 이후로 ARPAnet이 민간에 공개되었고, TCP/IP 가 등장하며 일반인들이 인터넷을 접할 수 있게 되었는데, 이제는 인터넷의 규모는 너무나도 커져 현대인들 중에 인터넷을 사용해보지 않은 사람을 찾기가 힘들게 되었다. 이러한...","categories": ["Backend"],
+        "tags": [],
+        "url": "/backend/backend-roadmap-2021-1/",
         "teaser": null
       }]
