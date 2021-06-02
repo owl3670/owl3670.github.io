@@ -1,10 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-04-15T17:55:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">꾸어어억의 블로그</title><subtitle></subtitle><author><name>꾸어어억</name></author><entry><title type="html">[Backend] 인터넷은 어떻게 동작하는가?</title><link href="http://localhost:4000/backend/backend-roadmap-2021-1/" rel="alternate" type="text/html" title="[Backend] 인터넷은 어떻게 동작하는가?" /><published>2021-04-15T00:00:00+09:00</published><updated>2021-04-15T00:00:00+09:00</updated><id>http://localhost:4000/backend/backend-roadmap-2021-1</id><content type="html" xml:base="http://localhost:4000/backend/backend-roadmap-2021-1/">&lt;p&gt;&lt;img src=&quot;/assets/images/backend_roadmap_2021_1.png&quot; alt=&quot;Image Not Found&quot; /&gt;&lt;br /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-06-02T14:29:57+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">꾸어어억의 블로그</title><subtitle></subtitle><author><name>꾸어어억</name></author><entry><title type="html">[Backend] 인터넷은 어떻게 동작하는가?</title><link href="http://localhost:4000/backend/backend-roadmap-2021-1/" rel="alternate" type="text/html" title="[Backend] 인터넷은 어떻게 동작하는가?" /><published>2021-04-15T00:00:00+09:00</published><updated>2021-04-15T00:00:00+09:00</updated><id>http://localhost:4000/backend/backend-roadmap-2021-1</id><content type="html" xml:base="http://localhost:4000/backend/backend-roadmap-2021-1/">&lt;p&gt;&lt;img src=&quot;/assets/images/backend_roadmap_2021_1.png&quot; alt=&quot;Image Not Found&quot; /&gt;&lt;br /&gt;
 Backend &lt;a href=&quot;http://localhost:4000/backend/backend-roadmap-2021/&quot;&gt;2021 로드맵&lt;/a&gt; 중 인터넷의 동작원리를 공부해보고자 한다.&lt;/p&gt;
 
 &lt;h3 id=&quot;개요&quot;&gt;개요&lt;/h3&gt;
 &lt;p&gt;1969년 미국 국방부의 주도하에 만들어진 ARPAnet(Advanced Research Projects Agency)이 등장하며 인터넷의 시작을 알렸다.&lt;br /&gt;
 이후로 ARPAnet이 민간에 공개되었고, TCP/IP 가 등장하며 일반인들이 인터넷을 접할 수 있게 되었는데, 이제는 인터넷의 규모는 너무나도 커져 현대인들 중에 인터넷을 사용해보지 않은 사람을 찾기가 힘들게 되었다.&lt;br /&gt;
 이러한 인터넷을 공부한다는건 단순히 웹을 공부하는 것이 아닌 TCP/IP 기반의 전 세계적인 컴퓨터 네트워크를 이해하는 과정이라 생각해야 할 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;본론&quot;&gt;본론&lt;/h3&gt;
+&lt;p&gt;인터넷은 IP 및 TCP를 따르는 패킷 라우팅 네트워크를 사용하여 동작하는데,
+한 쪽의 컴퓨터에서 다른쪽의 컴퓨터로 데이터를 전송하려 할 때 데이터는 패킷으로 작게 분할 되어 전송되게 되고 이러한 패킷은 TCP/IP 를 통해 목표한 곳에 도착하게된다.
+먼저 인터넷을 사용하기 위해 인터넷에 연결된 컴퓨터들은 식별할 수 있는 고유한 주소를 가지고 있어야 하는데 이를 IP 주소라 한다. 
+한 쪽의 컴퓨터에서 다른쪽의 컴퓨터로 데이터를 전송한다면, 이러한 IP 주소를 통해 목표한 컴퓨터를 식별할 수 있게되고 서로간의 신뢰성 있는 데이터 송수신을 위해 TCP를 이용하게 된다.&lt;/p&gt;
+
+&lt;p&gt;네트워크 인프라까지 살펴보게 되면 컴퓨터는 라우터 혹은 모뎀을 통해 ISP(Internet Service Provider)에 연결되게 되고 ISP 는 Client들을 관리하게 되는데, 
+목표한 곳에 패킷을 전달하기 위해 ISP는 백본 또는 ISP가 관리하는 대역폭의 백본으로 패킷을 라우팅하고 패킷은 목표한 컴퓨터를 찾을 때까지 이동한다.&lt;/p&gt;
 
 &lt;h3 id=&quot;참고-자료&quot;&gt;참고 자료&lt;/h3&gt;
 &lt;ul&gt;
