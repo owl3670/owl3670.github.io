@@ -1,30 +1,30 @@
 ---
 layout: single
-title: "[Python] itertools 조합형"
+title: '[Python] itertools 조합형'
 
 categories:
- - Python
+  - Python
 
 toc: true
 toc_sticky: true
-toc_label: "Index"
-toc_icon: "list"
+toc_label: 'Index'
+toc_icon: 'list'
 ---
 
-### 개요
 Python의 표준 라이브러리중 효율적인 반복작업을 위한 함수를 모은 itertools 모듈에는 조합을 위한 함수들이 존재하는데 이를 자세히 알아보려 한다.
 
 ### 종류
 
-|함수|설명|  
-|---|---|  
-|product(*args, repeat=1)|cartesian product (곱집합)|  
-|permutations(iterable, r=None)|길이 r의 튜플들이며, 반복되는 요소 없이 모든 가능한 조합들이다|  
-|combinations(iterable, r)|길이 r의 튜플들이며, 반복되는 요소 없이 정렬된 순서의 조합들이다|  
-|combinations_with_replacement(iterable, r)|길의 r의 튜플들이며, 반복되는 요소가 있는 정렬된 순서의 조합들이다|  
+| 함수                                       | 설명                                                               |
+| ------------------------------------------ | ------------------------------------------------------------------ |
+| product(\*args, repeat=1)                  | cartesian product (곱집합)                                         |
+| permutations(iterable, r=None)             | 길이 r의 튜플들이며, 반복되는 요소 없이 모든 가능한 조합들이다     |
+| combinations(iterable, r)                  | 길이 r의 튜플들이며, 반복되는 요소 없이 정렬된 순서의 조합들이다   |
+| combinations_with_replacement(iterable, r) | 길의 r의 튜플들이며, 반복되는 요소가 있는 정렬된 순서의 조합들이다 |
 
 ### 사용예시
-* 코드
+
+- 코드
 
 ```python
 import itertools
@@ -39,7 +39,8 @@ print(f'permutations : {permutations_result}')
 print(f'combinations : {combinations_result}')
 print(f'combinations_with_replacement : {combinations_with_replacement_result}')
 ```
-* 결과
+
+- 결과
 
 product : [(1, 1), (1, 2), (1, 3), (1, 4), (2, 1), (2, 2), (2, 3), (2, 4), (3, 1), (3, 2), (3, 3), (3, 4), (4, 1), (4, 2), (4, 3), (4, 4)]  
 permutations : [(1, 2), (1, 3), (1, 4), (2, 1), (2, 3), (2, 4), (3, 1), (3, 2), (3, 4), (4, 1), (4, 2), (4, 3)]  
@@ -47,8 +48,10 @@ combinations : [(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]
 combinations_with_replacement : [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3), (2, 4), (3, 3), (3, 4), (4, 4)]
 
 ### 더 알아보기
-파이썬 공식 문서를 통해 각 함수가 어떻게 구현되어있는지 자세히 보고자 한다.  
-* product
+
+파이썬 공식 문서를 통해 각 함수가 어떻게 구현되어있는지 자세히 보고자 한다.
+
+- product
 
 입력이 정렬되어 있다면, 결과가 정렬된 순서로 방출된다.
 실제로 구현되어 있는 코드에서는 메모리에 중간 결과를 쌓지 않는다는 점을 제외하고 다음 코드와 동등하다고 한다.
@@ -56,7 +59,7 @@ combinations_with_replacement : [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3),
 ```python
 #예시 product([1,2,3], repeat=2)
 def product(*args, repeat=1):
-    pools = [tuple(pool) for pool in args] * repeat 
+    pools = [tuple(pool) for pool in args] * repeat
     #pools : [(1, 2, 3), (1, 2, 3)]
     result = [[]]
     for pool in pools:
@@ -66,7 +69,8 @@ def product(*args, repeat=1):
     for prod in result:
         yield tuple(prod)
 ```
-* permutations
+
+- permutations
 
 입력이 정렬되어 있다면, 결과가 정렬된 순서로 방출된다.
 입력에서 중복된 값이 없다면, 결과에서 반복 값은 없다.
@@ -146,7 +150,8 @@ def permutations(iterable, r=None):
             #loop 20 indices :(2, 0, 1), yield : (3, 1, 2)
             #loop 22 indices :(2, 1, 0), yield : (3, 2, 1)
 ```
-* combinations
+
+- combinations
 
 입력이 정렬되어 있다면, 결과가 정렬된 순서로 방출된다.
 입력에서 중복된 값이 없다면, 결과에서 반복 값은 없다.
@@ -181,6 +186,7 @@ def combinations(iterable, r):
         #loop 1 indices : [0, 2], yield : (1, 3)
         #loop 2 indices : [1, 2], yield : (2, 3)
 ```
+
 permutaion 결과를 정렬된 형태만 걸러내어 인덱스로 사용하는 방법으로 구현 할 수도 있다.
 
 ```python
@@ -200,7 +206,8 @@ def combinations(iterable, r):
             #loop 2 indices : (0, 2), yield : (1, 3)
             #loop 4 indices : (1, 2), yield : (2, 3)
 ```
-* combinations_with_replacement
+
+- combinations_with_replacement
 
 입력이 정렬되어 있다면, 결과가 정렬된 순서로 방출된다.
 입력에서 중복된 값이 없다면, 결과에서 반복 값은 없다.
@@ -238,6 +245,7 @@ def combinations_with_replacement(iterable, r):
         #loop 4 indices : [1, 2], yield : (2, 3)
         #loop 5 indices : [2, 2], yield : (3, 3)
 ```
+
 product 결과를 정렬된 형태만 걸러내어 인덱스로 사용하는 방법으로 구현 할 수도 있다.
 
 ```python
@@ -265,4 +273,5 @@ def combinations_with_replacement(iterable, r):
 ```
 
 ### 참고 자료
-* <https://docs.python.org/ko/3/library/itertools.html>{: target="_blank"}
+
+- <https://docs.python.org/ko/3/library/itertools.html>{: target="\_blank"}

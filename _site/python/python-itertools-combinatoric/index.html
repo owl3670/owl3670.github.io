@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>[Python] itertools 조합형 - 꾸어어억의 블로그</title>
-<meta name="description" content="개요 Python의 표준 라이브러리중 효율적인 반복작업을 위한 함수를 모은 itertools 모듈에는 조합을 위한 함수들이 존재하는데 이를 자세히 알아보려 한다.">
+<meta name="description" content="Python의 표준 라이브러리중 효율적인 반복작업을 위한 함수를 모은 itertools 모듈에는 조합을 위한 함수들이 존재하는데 이를 자세히 알아보려 한다.">
 
 
   <meta name="author" content="꾸어어억">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/python/python-itertools-combinatoric/">
 
 
-  <meta property="og:description" content="개요 Python의 표준 라이브러리중 효율적인 반복작업을 위한 함수를 모은 itertools 모듈에는 조합을 위한 함수들이 존재하는데 이를 자세히 알아보려 한다.">
+  <meta property="og:description" content="Python의 표준 라이브러리중 효율적인 반복작업을 위한 함수를 모은 itertools 모듈에는 조합을 위한 함수들이 존재하는데 이를 자세히 알아보려 한다.">
 
 
 
@@ -295,7 +295,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="[Python] itertools 조합형">
-    <meta itemprop="description" content="개요Python의 표준 라이브러리중 효율적인 반복작업을 위한 함수를 모은 itertools 모듈에는 조합을 위한 함수들이 존재하는데 이를 자세히 알아보려 한다.">
+    <meta itemprop="description" content="Python의 표준 라이브러리중 효율적인 반복작업을 위한 함수를 모은 itertools 모듈에는 조합을 위한 함수들이 존재하는데 이를 자세히 알아보려 한다.">
     <meta itemprop="datePublished" content="2021-04-07T00:00:00+09:00">
     
 
@@ -329,13 +329,12 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-list"></i> Index</h4></header>
-              <ul class="toc__menu"><li><a href="#개요">개요</a></li><li><a href="#종류">종류</a></li><li><a href="#사용예시">사용예시</a></li><li><a href="#더-알아보기">더 알아보기</a></li><li><a href="#참고-자료">참고 자료</a></li></ul>
+              <ul class="toc__menu"><li><a href="#종류">종류</a></li><li><a href="#사용예시">사용예시</a></li><li><a href="#더-알아보기">더 알아보기</a></li><li><a href="#참고-자료">참고 자료</a></li></ul>
 
             </nav>
           </aside>
         
-        <h3 id="개요">개요</h3>
-<p>Python의 표준 라이브러리중 효율적인 반복작업을 위한 함수를 모은 itertools 모듈에는 조합을 위한 함수들이 존재하는데 이를 자세히 알아보려 한다.</p>
+        <p>Python의 표준 라이브러리중 효율적인 반복작업을 위한 함수를 모은 itertools 모듈에는 조합을 위한 함수들이 존재하는데 이를 자세히 알아보려 한다.</p>
 
 <h3 id="종류">종류</h3>
 
@@ -367,6 +366,7 @@
 </table>
 
 <h3 id="사용예시">사용예시</h3>
+
 <ul>
   <li>코드</li>
 </ul>
@@ -394,6 +394,7 @@
 <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'combinations : </span><span class="si">{</span><span class="n">combinations_result</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">'combinations_with_replacement : </span><span class="si">{</span><span class="n">combinations_with_replacement_result</span><span class="si">}</span><span class="s">'</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
 <ul>
   <li>결과</li>
 </ul>
@@ -404,7 +405,9 @@ combinations : [(1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)]<br />
 combinations_with_replacement : [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3), (2, 4), (3, 3), (3, 4), (4, 4)]</p>
 
 <h3 id="더-알아보기">더 알아보기</h3>
+
 <p>파이썬 공식 문서를 통해 각 함수가 어떻게 구현되어있는지 자세히 보고자 한다.</p>
+
 <ul>
   <li>product</li>
 </ul>
@@ -425,7 +428,7 @@ combinations_with_replacement : [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3),
 11
 </pre></td><td class="rouge-code"><pre><span class="c1">#예시 product([1,2,3], repeat=2)
 </span><span class="k">def</span> <span class="nf">product</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">pools</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">pool</span><span class="p">)</span> <span class="k">for</span> <span class="n">pool</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span> <span class="o">*</span> <span class="n">repeat</span> 
+    <span class="n">pools</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">pool</span><span class="p">)</span> <span class="k">for</span> <span class="n">pool</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span> <span class="o">*</span> <span class="n">repeat</span>
     <span class="c1">#pools : [(1, 2, 3), (1, 2, 3)]
 </span>    <span class="n">result</span> <span class="o">=</span> <span class="p">[[]]</span>
     <span class="k">for</span> <span class="n">pool</span> <span class="ow">in</span> <span class="n">pools</span><span class="p">:</span>
@@ -435,6 +438,7 @@ combinations_with_replacement : [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3),
 </span>    <span class="k">for</span> <span class="n">prod</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
         <span class="k">yield</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">prod</span><span class="p">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
 <ul>
   <li>permutations</li>
 </ul>
@@ -582,6 +586,7 @@ combinations_with_replacement : [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3),
 </span>            <span class="c1">#loop 20 indices :(2, 0, 1), yield : (3, 1, 2)
 </span>            <span class="c1">#loop 22 indices :(2, 1, 0), yield : (3, 2, 1)
 </span></pre></td></tr></tbody></table></code></pre></div></div>
+
 <ul>
   <li>combinations</li>
 </ul>
@@ -645,6 +650,7 @@ combinations_with_replacement : [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3),
         <span class="c1">#loop 1 indices : [0, 2], yield : (1, 3)
 </span>        <span class="c1">#loop 2 indices : [1, 2], yield : (2, 3)
 </span></pre></td></tr></tbody></table></code></pre></div></div>
+
 <p>permutaion 결과를 정렬된 형태만 걸러내어 인덱스로 사용하는 방법으로 구현 할 수도 있다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -678,6 +684,7 @@ combinations_with_replacement : [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3),
 </span>            <span class="c1">#loop 2 indices : (0, 2), yield : (1, 3)
 </span>            <span class="c1">#loop 4 indices : (1, 2), yield : (2, 3)
 </span></pre></td></tr></tbody></table></code></pre></div></div>
+
 <ul>
   <li>combinations_with_replacement</li>
 </ul>
@@ -747,6 +754,7 @@ combinations_with_replacement : [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3),
 </span>        <span class="c1">#loop 4 indices : [1, 2], yield : (2, 3)
 </span>        <span class="c1">#loop 5 indices : [2, 2], yield : (3, 3)
 </span></pre></td></tr></tbody></table></code></pre></div></div>
+
 <p>product 결과를 정렬된 형태만 걸러내어 인덱스로 사용하는 방법으로 구현 할 수도 있다.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -794,8 +802,9 @@ combinations_with_replacement : [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3),
 </span></pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="참고-자료">참고 자료</h3>
+
 <ul>
-  <li><a href="https://docs.python.org/ko/3/library/itertools.html" target="_blank">https://docs.python.org/ko/3/library/itertools.html</a></li>
+  <li><a href="https://docs.python.org/ko/3/library/itertools.html" target="\_blank">https://docs.python.org/ko/3/library/itertools.html</a></li>
 </ul>
 
         
@@ -862,6 +871,43 @@ combinations_with_replacement : [(1, 1), (1, 2), (1, 3), (1, 4), (2, 2), (2, 3),
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/datastructure-set/" rel="permalink">[자료구조] Set
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-07-15T00:00:00+09:00">July 15, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Set 은 유니크한 값들을 순서가 없이 순열 형태로 저장 할 수 있는 추상화된 자료구조이다.
+
+</p>
+  </article>
+</div>
+
         
           
 
@@ -971,44 +1017,6 @@ Backend 2021 로드맵 중 인터넷의 동작원리를 공부해보고자 한�
 
     <p class="archive__item-excerpt" itemprop="description">Backend를 심도있게 공부하기 위해 로드맵을 선택하여 따라가보고자 한다.
 
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/diary/diary-21-04-06/" rel="permalink">[생각 정리] 2021-04-06
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-04-06T00:00:00+09:00">April 6, 2021</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">나의 기억력은 영원하지 않다는걸 인정하고 기록을 시작해야 한다.
-새로운 기술을 접하고 내 것으로 만들기 위해서는 나의 이해와 생각을 토대로 정리를 해봐야 한다.
-이제 블로그를 시작하며, 지금의 다짐을 잊지 말고 계속 전진해야 한다.
 </p>
   </article>
 </div>

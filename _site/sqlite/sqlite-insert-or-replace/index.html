@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>[SQLite] INSERT OR REPLACE - 꾸어어억의 블로그</title>
-<meta name="description" content="개요 데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다. Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는데 SQLite에도 비슷한 기능을 하는 문법이 존재한다.">
+<meta name="description" content="데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다. Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는데 SQLite에도 비슷한 기능을 하는 문법이 존재한다.">
 
 
   <meta name="author" content="꾸어어억">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/sqlite/sqlite-insert-or-replace/">
 
 
-  <meta property="og:description" content="개요 데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다. Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는데 SQLite에도 비슷한 기능을 하는 문법이 존재한다.">
+  <meta property="og:description" content="데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다. Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는데 SQLite에도 비슷한 기능을 하는 문법이 존재한다.">
 
 
 
@@ -295,7 +295,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="[SQLite] INSERT OR REPLACE">
-    <meta itemprop="description" content="개요데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다.Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는데 SQLite에도 비슷한 기능을 하는 문법이 존재한다.">
+    <meta itemprop="description" content="데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다.Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는데 SQLite에도 비슷한 기능을 하는 문법이 존재한다.">
     <meta itemprop="datePublished" content="2021-04-01T00:00:00+09:00">
     
 
@@ -329,16 +329,16 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-list"></i> Index</h4></header>
-              <ul class="toc__menu"><li><a href="#개요">개요</a></li><li><a href="#문법">문법</a></li><li><a href="#사용-예시">사용 예시</a></li><li><a href="#더-알아보기">더 알아보기</a></li></ul>
+              <ul class="toc__menu"><li><a href="#문법">문법</a></li><li><a href="#사용-예시">사용 예시</a></li><li><a href="#더-알아보기">더 알아보기</a></li></ul>
 
             </nav>
           </aside>
         
-        <h3 id="개요">개요</h3>
-<p>데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다.<br />
+        <p>데이터베이스를 사용할 때 테이블에 데이터가 이미 있으면 UPDATE, 없으면 INSERT를 해야 하는 경우가 있다.<br />
 Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는데 SQLite에도 비슷한 기능을 하는 문법이 존재한다.</p>
 
 <h3 id="문법">문법</h3>
+
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -348,7 +348,9 @@ Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는
 <span class="k">VALUES</span>
 <span class="p">(</span><span class="n">VALUES1</span><span class="p">,</span> <span class="n">VALUES2</span><span class="p">,</span> <span class="p">...)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
 <p>문법은 기존 INSERT INTO 에 OR REPLACE INTO 가 추가된것 뿐인 형태로 사용할 수도 있고</p>
+
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -358,9 +360,11 @@ Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는
 <span class="k">VALUES</span>
 <span class="p">(</span><span class="n">VALUES1</span><span class="p">,</span> <span class="n">VALUES2</span><span class="p">,</span> <span class="p">...)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
 <p>이와 같이 축약하여 REPLACE INTO 만 사용할 수도 있다.</p>
 
 <h3 id="사용-예시">사용 예시</h3>
+
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -372,6 +376,7 @@ Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는
 	<span class="n">salary</span> <span class="nb">numeric</span>
 <span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
 <p>우선 테이블을 위와 같이 만들어 낸다.</p>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -383,6 +388,7 @@ Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는
        <span class="p">(</span><span class="s1">'Seo'</span><span class="p">,</span> <span class="mi">220</span><span class="p">),</span>
        <span class="p">(</span><span class="s1">'Jeong'</span><span class="p">,</span> <span class="mi">210</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
 <p>위와 같이 데이터를 집어넣는다.</p>
 
 <table>
@@ -419,6 +425,7 @@ Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는
 </pre></td><td class="rouge-code"><pre><span class="k">REPLACE</span> <span class="k">INTO</span> <span class="n">employee</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
 <span class="k">VALUES</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'Kang'</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
 <p>새로운 데이터를 REPLACE 를 사용하여 집어넣는다.</p>
 
 <table>
@@ -460,6 +467,7 @@ Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는
 </pre></td><td class="rouge-code"><pre><span class="k">REPLACE</span> <span class="k">INTO</span> <span class="n">employee</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
 <span class="k">VALUES</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s1">'Cha'</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
 <p>REPLACE 로 같은 내용에서 salary만 바꾸어 집어넣는다.</p>
 
 <table>
@@ -497,6 +505,7 @@ Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는
 <p><strong>id : 4</strong>인 Row 가 존재하기에 위와 같이 새로운 Row의 추가없이 <strong>id : 4</strong>인 Row의 데이터만 바뀌어 있는 것을 확인 할 수 있다.</p>
 
 <h3 id="더-알아보기">더 알아보기</h3>
+
 <p>REPLACE 는 UNIQUE나 PRIMARY KEY 제약조건이 위배됨을 감지하여 제약조건이 위배된 ROW를 찾아 DELETE를 수행하고
 명령을 다시 수행하는 형태로 동작하게 된다.
 때문에 INSERT OR UPDATE라고 생각하고 사용하면 맞지 않는다.</p>
@@ -504,6 +513,7 @@ Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="k">CREATE</span> <span class="k">UNIQUE</span> <span class="k">INDEX</span> <span class="n">idx_employee_name</span> <span class="k">ON</span> <span class="n">positions</span> <span class="p">(</span><span class="n">name</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
 <p>아까 만든 테이블에서 name COLUMN에 UNIQUE 제약조건을 추가 한다.</p>
 
 <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -511,6 +521,7 @@ Oracle과 SQLServer는 MERGE INTO 구문을 지원하기에 이를 할수 있는
 </pre></td><td class="rouge-code"><pre><span class="k">REPLACE</span> <span class="k">INTO</span> <span class="n">employee</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
 <span class="k">VALUES</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">'Cha'</span><span class="p">,</span> <span class="mi">300</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
 <p>REPLACE 를 사용해 <strong>id : 5</strong>인 Row를 추가하려 하면 <strong>name : ‘Cha’</strong> 가 제약조건에 위배되어 실행되지 않아야 하지만
 REPLACE는 충돌이 발생한 Row를 DELETE 시키고 명령을 진행하게된다.</p>
 
@@ -553,6 +564,7 @@ REPLACE는 충돌이 발생한 Row를 DELETE 시키고 명령을 진행하게된
 </pre></td><td class="rouge-code"><pre><span class="k">REPLACE</span> <span class="k">INTO</span> <span class="n">employee</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
 <span class="k">VALUES</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">'Cha'</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
 <p>제약조건이 위배되는 Row가 여러개여도 모두 DELETE 후 명령을 실행하게 되는데, 위와 같이 id와 name Column의 제약조건이 모두 위배되게 REPLACE를 사용한다면</p>
 
 <table>
@@ -648,6 +660,43 @@ REPLACE는 충돌이 발생한 Row를 DELETE 시키고 명령을 진행하게된
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/datastructure-set/" rel="permalink">[자료구조] Set
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-07-15T00:00:00+09:00">July 15, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Set 은 유니크한 값들을 순서가 없이 순열 형태로 저장 할 수 있는 추상화된 자료구조이다.
+
+</p>
+  </article>
+</div>
+
         
           
 
@@ -756,44 +805,6 @@ Backend 2021 로드맵 중 인터넷의 동작원리를 공부해보고자 한�
 
 
     <p class="archive__item-excerpt" itemprop="description">Backend를 심도있게 공부하기 위해 로드맵을 선택하여 따라가보고자 한다.
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/python/python-itertools-combinatoric/" rel="permalink">[Python] itertools 조합형
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-04-07T00:00:00+09:00">April 7, 2021</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">개요
-Python의 표준 라이브러리중 효율적인 반복작업을 위한 함수를 모은 itertools 모듈에는 조합을 위한 함수들이 존재하는데 이를 자세히 알아보려 한다.
 
 </p>
   </article>

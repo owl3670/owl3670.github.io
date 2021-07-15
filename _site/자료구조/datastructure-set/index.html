@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Backend] 2021 로드맵 - 꾸어어억의 블로그</title>
-<meta name="description" content="Backend를 심도있게 공부하기 위해 로드맵을 선택하여 따라가보고자 한다.">
+<!-- begin _includes/seo.html --><title>[자료구조] Set - 꾸어어억의 블로그</title>
+<meta name="description" content="Set 은 유니크한 값들을 순서가 없이 순열 형태로 저장 할 수 있는 추상화된 자료구조이다.">
 
 
   <meta name="author" content="꾸어어억">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="꾸어어억의 블로그">
-<meta property="og:title" content="[Backend] 2021 로드맵">
-<meta property="og:url" content="http://localhost:4000/backend/backend-roadmap-2021/">
+<meta property="og:title" content="[자료구조] Set">
+<meta property="og:url" content="http://localhost:4000/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/datastructure-set/">
 
 
-  <meta property="og:description" content="Backend를 심도있게 공부하기 위해 로드맵을 선택하여 따라가보고자 한다.">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-04-14T00:00:00+09:00">
+  <meta property="og:description" content="Set 은 유니크한 값들을 순서가 없이 순열 형태로 저장 할 수 있는 추상화된 자료구조이다.">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2021-07-15T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/backend/backend-roadmap-2021/">
+
+<link rel="canonical" href="http://localhost:4000/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/datastructure-set/">
 
 
 
@@ -294,15 +294,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Backend] 2021 로드맵">
-    <meta itemprop="description" content="Backend를 심도있게 공부하기 위해 로드맵을 선택하여 따라가보고자 한다.">
-    <meta itemprop="datePublished" content="2021-04-14T00:00:00+09:00">
+    <meta itemprop="headline" content="[자료구조] Set">
+    <meta itemprop="description" content="Set 은 유니크한 값들을 순서가 없이 순열 형태로 저장 할 수 있는 추상화된 자료구조이다.">
+    <meta itemprop="datePublished" content="2021-07-15T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[Backend] 2021 로드맵
+          <h1 id="page-title" class="page__title" itemprop="headline">[자료구조] Set
 </h1>
           
 
@@ -311,7 +311,7 @@
       
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-04-14T00:00:00+09:00">April 14, 2021</time>
+        <time datetime="2021-07-15T00:00:00+09:00">July 15, 2021</time>
       </span>
     
 
@@ -326,14 +326,30 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>Backend를 심도있게 공부하기 위해 로드맵을 선택하여 따라가보고자 한다.</p>
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-list"></i> Index</h4></header>
+              <ul class="toc__menu"><li><a href="#특징">특징</a></li><li><a href="#set-내부-동작">Set 내부 동작</a></li></ul>
 
-<p><img src="/assets/images/backend_roadmap_2021.png" alt="screensh" /></p>
+            </nav>
+          </aside>
+        
+        <p>Set 은 유니크한 값들을 순서가 없이 순열 형태로 저장 할 수 있는 추상화된 자료구조이다.</p>
 
-<h3 id="출처">출처</h3>
+<h4 id="특징">특징</h4>
+
 <ul>
-  <li><a href="https://roadmap.sh/backend" target="_blank">https://roadmap.sh/backend</a></li>
+  <li>순서를 보장하지 않는다(Unorderd)</li>
+  <li>고유한 값을 가지고 있도록 요소 삽입 시 중복 값 존재여부를 확인한다</li>
+  <li>주로 해당 데이터가 존재하는지 여부를 빠르게 확인하기 위해 사용한다</li>
 </ul>
+
+<h4 id="set-내부-동작">Set 내부 동작</h4>
+
+<ol>
+  <li>값을 추가 할 시 Hash 값을 구하여 HashTable에 저장</li>
+  <li>값을 탐색할 때 HashTable 을 통하여 찾는다</li>
+</ol>
 
         
       </section>
@@ -352,14 +368,14 @@
     <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
     <span itemprop="keywords">
     
-      <a href="/categories/#backend" class="page__taxonomy-item" rel="tag">Backend</a>
+      <a href="/categories/#%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0" class="page__taxonomy-item" rel="tag">자료구조</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-14T00:00:00+09:00">April 14, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-07-15T00:00:00+09:00">July 15, 2021</time></p>
 
 
       </footer>
@@ -369,23 +385,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BBackend%5D+2021+%EB%A1%9C%EB%93%9C%EB%A7%B5%20http%3A%2F%2Flocalhost%3A4000%2Fbackend%2Fbackend-roadmap-2021%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%5D+Set%20http%3A%2F%2Flocalhost%3A4000%2F%25EC%259E%2590%25EB%25A3%258C%25EA%25B5%25AC%25EC%25A1%25B0%2Fdatastructure-set%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fbackend%2Fbackend-roadmap-2021%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F%25EC%259E%2590%25EB%25A3%258C%25EA%25B5%25AC%25EC%25A1%25B0%2Fdatastructure-set%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fbackend%2Fbackend-roadmap-2021%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F%25EC%259E%2590%25EB%25A3%258C%25EA%25B5%25AC%25EC%25A1%25B0%2Fdatastructure-set%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/python/python-itertools-combinatoric/" class="pagination--pager" title="[Python] itertools 조합형
+      <a href="/backend/backend-roadmap-2021-1/" class="pagination--pager" title="[Backend] 인터넷은 어떻게 동작하는가?
 ">이전</a>
     
     
-      <a href="/programmers/programmers-3/" class="pagination--pager" title="[프로그래머스][Python] 정수 삼각형
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -399,43 +414,6 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/datastructure-set/" rel="permalink">[자료구조] Set
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-07-15T00:00:00+09:00">July 15, 2021</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Set 은 유니크한 값들을 순서가 없이 순열 형태로 저장 할 수 있는 추상화된 자료구조이다.
-
-</p>
-  </article>
-</div>
-
         
           
 
@@ -507,6 +485,43 @@ Backend 2021 로드맵 중 인터넷의 동작원리를 공부해보고자 한�
 
     <p class="archive__item-excerpt" itemprop="description">난이도 : 프로그래머스 Level 3
 문제 모음 : 코팅테스트 고득점 Kit 동적계획법
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/backend/backend-roadmap-2021/" rel="permalink">[Backend] 2021 로드맵
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-04-14T00:00:00+09:00">April 14, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Backend를 심도있게 공부하기 위해 로드맵을 선택하여 따라가보고자 한다.
 
 </p>
   </article>
