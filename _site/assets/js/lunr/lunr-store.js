@@ -48,8 +48,20 @@ var store = [{
         "teaser": null
       },{
         "title": "[자료구조] Set",
-        "excerpt":"Set 은 유니크한 값들을 순서가 없이 순열 형태로 저장 할 수 있는 추상화된 자료구조이다. 특징 순서를 보장하지 않는다(Unorderd) 고유한 값을 가지고 있도록 요소 삽입 시 중복 값 존재여부를 확인한다 주로 해당 데이터가 존재하는지 여부를 빠르게 확인하기 위해 사용한다 Set 내부 동작 값을 추가 할 시 Hash 값을 구하여 HashTable에 저장...","categories": ["자료구조"],
+        "excerpt":"Set 은 유니크한 값들을 순서가 없이 순열 형태로 저장 할 수 있는 추상화된 자료구조이다. 특징 순서를 보장하지 않는다(Unorderd) 고유한 값을 가지고 있도록 요소 삽입 시 중복 값 존재여부를 확인한다 주로 해당 데이터가 존재하는지 여부를 빠르게 확인하기 위해 사용한다 Set 내부 동작 HashTable 형태로 구현하는 경우가 많은 것 같지만 일부 언어(C++)등에서는...","categories": ["자료구조"],
         "tags": [],
         "url": "/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/datastructure-set/",
+        "teaser": null
+      },{
+        "title": "[Javascript] 자바스크립트 로딩 방법",
+        "excerpt":"웹브라우저에서 자바스크립트를 로딩하는 방법에 대해 알아보고자한다 일반적인 방법 head 에서 로딩 1 2 3 4 5 6 7 8 9 &lt;!DOCTYPE html&gt; &lt;html lang=\"en\"&gt; &lt;head&gt; &lt;meta charset=\"UTF-8\" /&gt; &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" /&gt; &lt;title&gt;Document&lt;/title&gt; &lt;script src=\"main.js\"&gt;&lt;/script&gt; &lt;/head&gt; &lt;/html&gt; 위와같이 head 안에서 script 태그만을 사용하여 로딩하는 방식이다. 이러한 로딩방식은 다음과 같이...","categories": ["Javascript"],
+        "tags": [],
+        "url": "/javascript/javascript-loading-method/",
+        "teaser": null
+      },{
+        "title": "[Javascript] 자바스크립트 Use Strict",
+        "excerpt":"자바스크립트는 굉장히 유연한 언어로 그에따른 여러 단점도 여럿 존재한다.  때문에 자바스크립트를 좀 더 엄격하게 사용하여 실수를 방지하고 싶은 개발자들을 위해 ECMAScript 5에서 부터 use strict 라는 기능을 제공하게 되었다.  ","categories": ["Javascript"],
+        "tags": [],
+        "url": "/javascript/javascript-use-strict/",
         "teaser": null
       }]

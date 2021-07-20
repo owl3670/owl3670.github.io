@@ -336,7 +336,7 @@
         
         <p>Set 은 유니크한 값들을 순서가 없이 순열 형태로 저장 할 수 있는 추상화된 자료구조이다.</p>
 
-<h4 id="특징">특징</h4>
+<h3 id="특징">특징</h3>
 
 <ul>
   <li>순서를 보장하지 않는다(Unorderd)</li>
@@ -344,12 +344,17 @@
   <li>주로 해당 데이터가 존재하는지 여부를 빠르게 확인하기 위해 사용한다</li>
 </ul>
 
-<h4 id="set-내부-동작">Set 내부 동작</h4>
+<h3 id="set-내부-동작">Set 내부 동작</h3>
 
-<ol>
-  <li>값을 추가 할 시 Hash 값을 구하여 HashTable에 저장</li>
-  <li>값을 탐색할 때 HashTable 을 통하여 찾는다</li>
-</ol>
+<p>HashTable 형태로 구현하는 경우가 많은 것 같지만 일부 언어(C++)등에서는 이진트리 형태로 구현하는 경우도 존재하는 듯 하다.
+이 글에서는 HashTable 형태를 예시로 한다.</p>
+
+<ul>
+  <li>추가하는 요소의 Hash 값을 구해온다</li>
+  <li>Hash 값을 HashTable 에 저장한다</li>
+  <li>HashTable 형태로 값을 저장하기에 값 탐색시 O(1)의 성능이 기대된다</li>
+  <li>Hash 함수의 성능에 따라 전체적인 성능이 달라질 수 있다</li>
+</ul>
 
         
       </section>
@@ -400,7 +405,8 @@
 ">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/javascript/javascript-loading-method/" class="pagination--pager" title="[Javascript] 자바스크립트 로딩 방법
+">다음</a>
     
   </nav>
 
@@ -414,6 +420,81 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/javascript-use-strict/" rel="permalink">[Javascript] 자바스크립트 Use Strict
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-07-17T00:00:00+09:00">July 17, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바스크립트는 굉장히 유연한 언어로 그에따른 여러 단점도 여럿 존재한다.
+때문에 자바스크립트를 좀 더 엄격하게 사용하여 실수를 방지하고 싶은 개발자들을 위해 ECMAScript 5에서 부터
+use strict 라는 기능을 제공하게 되었다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/javascript-loading-method/" rel="permalink">[Javascript] 자바스크립트 로딩 방법
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+      
+      <span class="page__meta-date">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+        <time datetime="2021-07-17T00:00:00+09:00">July 17, 2021</time>
+      </span>
+    
+
+    
+
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">웹브라우저에서 자바스크립트를 로딩하는 방법에 대해 알아보고자한다
+
+</p>
+  </article>
+</div>
+
         
           
 
@@ -485,80 +566,6 @@ Backend 2021 로드맵 중 인터넷의 동작원리를 공부해보고자 한�
 
     <p class="archive__item-excerpt" itemprop="description">난이도 : 프로그래머스 Level 3
 문제 모음 : 코팅테스트 고득점 Kit 동적계획법
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/backend/backend-roadmap-2021/" rel="permalink">[Backend] 2021 로드맵
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-04-14T00:00:00+09:00">April 14, 2021</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Backend를 심도있게 공부하기 위해 로드맵을 선택하여 따라가보고자 한다.
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/python/python-itertools-combinatoric/" rel="permalink">[Python] itertools 조합형
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-      
-      <span class="page__meta-date">
-        <i class="far fa-calendar-alt" aria-hidden="true"></i>
-        <time datetime="2021-04-07T00:00:00+09:00">April 7, 2021</time>
-      </span>
-    
-
-    
-
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Python의 표준 라이브러리중 효율적인 반복작업을 위한 함수를 모은 itertools 모듈에는 조합을 위한 함수들이 존재하는데 이를 자세히 알아보려 한다.
 
 </p>
   </article>
