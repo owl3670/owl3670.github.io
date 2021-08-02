@@ -62,10 +62,11 @@ export default sum;
 엄격모드가 아닐시에는 무시되던 작성자의 실수 등을 에러로 발생시키게 된다.
 
 ```javascript
-'use˚ strict';
+'use strict';
 
+// 선언되지 않은 변수의 사용 (변수명 입력 실수 방지됨)
 let variable = 3;
-variable33 = 5; //변수명이 달라 에러 발생
+variable33 = 5; //ReferenceError 발생
 
 // 쓸수 없는 전역변수 변수명에 할당
 let undefined = 5; // TypeError 발생
@@ -104,7 +105,7 @@ let sum =
   197 +
   142;
 
-// Primitive 값이 프로퍼티 설정 금지
+// Primitive 값에 프로퍼티 설정 금지
 (function () {
   false.true = ''; // TypeError 발생
   (14).sailing = 'home'; // TypeError 발생
