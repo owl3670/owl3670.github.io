@@ -36,3 +36,41 @@ var a, b, c int
 // 변수 복수개 선언과 동시에 값 할당
 var d, e, f int = 1, 2, 3
 ```
+
+변수 선언 시 괄호로 묶어서 나열하듯이 선언 할 수 있다. 이때 나열되는 변수들은 같은 타입일 필요는 없다.
+
+```go
+// 변수 선언 시 괄호로 묶어서 나열
+var (
+  a int
+  b int
+
+  // 선언과 동시에 할당 가능
+  c int = 3
+
+  // 선언과 동시에 할 당시 타입 생략 가능
+  d = 4
+
+  // 같은 괄호 내에서 다른 타입선언 가능
+  e = "string"
+)
+
+a = 1
+b = 2
+```
+
+Go 언어의 변수는 Short Assignment Statement (:=) 를 사용하여 var 키워드 와 타입을 생략 할 수 있으나 함수 내에서만 가능한 표현이다.
+Go 언어 함수의 밖에서 모든 문(statement)은 키워드로 시작하여야 한다.
+
+```go
+// 함수 밖에서 선언하였기에 에러 발생
+// syntax error: non-declaration statement outside function body
+a := 1
+
+func main(){
+  // var 키워드 및 타입 생략
+  b := 2
+
+  c := "string"
+}
+```
