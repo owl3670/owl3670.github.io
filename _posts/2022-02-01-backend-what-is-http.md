@@ -28,6 +28,20 @@ HTTP 는 클라이언트-서버 프로토콜로 사용자가 요청(request)을 
 - TCP/IP 연결
   - HTTP 는 메시지의 손실이 없는 연결을 요구하기에 TCP/IP 전송 위에서 동작한다.
 
+#### HTTP Message
+
+- Requests
+  - Method : 클라이언트가 원하는 동작을 기재한다.
+  - Path : 접근하려는 resource 의 경로를 기재한다.
+  - Version : HTTP 의 버전을 기재한다.
+  - Headers : 추가적인 정보를 기재한다.
+- Responses
+  - Version : HTTP 의 버전을 기재한다.
+  - Status code : request 의 결과를 약속된 code로 기재한다.
+  - Status message : code 에 대한 설명을 기재한다.
+  - Headers : 추가적인 정보를 기재한다.
+  - Body : 선택적인 정보로 불러와진 resource 등을 기재한다.
+
 ---
 
 ### 참고 자료
