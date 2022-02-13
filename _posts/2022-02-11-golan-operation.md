@@ -50,3 +50,26 @@ func main(){
 ```
 
 ### 관계 연산자
+
+```go
+package main
+
+import "fmt"
+
+func main(){
+  a, b, c := 10, 15 ,10
+  
+  fmt.Println("a == b : ", a == b)  // false
+  fmt.Println("a == c : ", a == c)  // true
+  fmt.Println("a != b : ", a != b)  // true
+  fmt.Println("a != c : ", a != c)  // false
+  fmt.Println("a < b : ", a < b) // true
+  fmt.Println("a < c : ", a < c) // flase
+  fmt.Println("a > b : ", a > b)  // false
+  fmt.Println("a > c : ", a > c)  // false
+  fmt.Println("a <= b : ", a <= b) // true
+  fmt.Println("a <= c : ", a <= c) // true
+  fmt.Println("a >= b : ", a >= b)  // false
+  fmt.Println("a >= c : ", a >= c)  // true
+}
+```
