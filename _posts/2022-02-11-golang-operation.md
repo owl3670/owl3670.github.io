@@ -191,39 +191,17 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
-var ch = make(chan string)
+func main(){
+ a := make(chan int) // 채널 생성
 
-func print(s string) {
-	time.Sleep(100 * time.Millisecond)
-	fmt.Println(s)
-}
+ go func(){
+   b, c := 5, 10
+   a <- b + c // 채널로 데이터 송신 (<- 연산자)
+ }()
 
-func printGo(s string) {
-	time.Sleep(100 * time.Millisecond)
-	fmt.Println(s)
-	ch <- s
-}
-
-func main() {
-	fmt.Println("Function1 Started")
-	print("Function1 Doing Something")
-	fmt.Println("Function1 Finished")
-
-	fmt.Println("Function2 Started")
-	go printGo("Function2 Doing Something") // Go 루틴으로 함수 실행
-	fmt.Println("Function2 Finished") // Go루틴 실행 직후 다음 Statement 실행
-
-	var _ = <-ch
-
-  // 출력 순서
-  // Function1 Started
-  // Function1 Doing Something
-  // Function1 Finished
-  // Function2 Started
-  // Function2 Finished
-  // Function2 Doing Something
+ result := <- a // 채널로 부터 결과값 수신 (<- 연산자)
+ fmt.println(result) // 15
 }
 ```

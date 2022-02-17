@@ -22,19 +22,36 @@ import (
 	"time"
 )
 
+var ch = make(chan string)
+
 func print(s string) {
 	time.Sleep(100 * time.Millisecond)
 	fmt.Println(s)
 }
 
-func main() {
-	fmt.Println("Function Start")
-	print("Doing Something")
-	fmt.Println("Function Finished")
-
-	fmt.Println("Function Start")
-	go print("Doing Something")
-	fmt.Println("Function Finished")
+func printGo(s string) {
+	time.Sleep(100 * time.Millisecond)
+	fmt.Println(s)
+	ch <- s
 }
 
+func main() {
+	fmt.Println("Function1 Started")
+	print("Function1 Doing Something")
+	fmt.Println("Function1 Finished")
+
+	fmt.Println("Function2 Started")
+	go printGo("Function2 Doing Something") // Go 루틴으로 함수 실행
+	fmt.Println("Function2 Finished") // Go루틴 실행 직후 다음 Statement 실행
+
+	var _ = <-ch
+
+  // 출력 순서
+  // Function1 Started
+  // Function1 Doing Something
+  // Function1 Finished
+  // Function2 Started
+  // Function2 Finished
+  // Function2 Doing Something
+}
 ```
