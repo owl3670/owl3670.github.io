@@ -57,6 +57,8 @@ WAL 레코드가 생성되는 즉시 Standby 서버로 레코드를 전송한다
 
 Primary 에서 Database (streaming_replication), Table (user) 를 만들어 둔 후 Test 데이터를 Insert 해둔 채로 시작
 
+![image](../assets/images/streaming_replication/primary_table1.PNG)
+
 Password 암호화 방식 설정
 
 ```sql
@@ -144,6 +146,8 @@ stanby 시작
 
 Stanby 에서 Primary 와 같은 데이터를 확인
 
+![image](../assets/images/streaming_replication/standby_table1.PNG)
+
 ### **Streaming Replication 상태 확인**
 
 Database Log 를 통해 streaming 이 시작되었는지 확인 가능
@@ -163,11 +167,17 @@ Primary 에서 쿼리를 통해 Replication Stat을 확인 가능
 SELECT * FROM pg_stat_replication;
 ```
 
+![image](../assets/images/streaming_replication/pg_stat_replication.PNG)
+
 ### **Streaming Replication Test**
 
 Primary 에서 Data Insert
 
+![image](../assets/images/streaming_replication/primary_table2.PNG)
+
 Standby 에서 Data 확인
+
+![image](../assets/images/streaming_replication/standby_table2.PNG)
 
 ## Reference
 
