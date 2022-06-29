@@ -57,7 +57,7 @@ WAL 레코드가 생성되는 즉시 Standby 서버로 레코드를 전송한다
 
 Primary 에서 Database (streaming_replication), Table (user) 를 만들어 둔 후 Test 데이터를 Insert 해둔 채로 시작
 
-![image](/assets/images/streaming_replication/primary_table1.PNG)
+![image](/assets/images/streaming_replication/primary_table1.png)
 
 Password 암호화 방식 설정
 
