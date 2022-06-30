@@ -11,10 +11,6 @@ toc_label: 'Index'
 toc_icon: 'list'
 ---
 
-# Streaming Replication
-
-## 개요
-
 postgreSQL 의 이중화 방법 중 9.0 이상 버전 부터 지원되는 streaming replication 이란 기능에 대해 알아보고자 한다.
 
 ## WAL
