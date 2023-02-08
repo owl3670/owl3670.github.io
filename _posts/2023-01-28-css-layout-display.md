@@ -38,8 +38,4 @@ inline 이 기본인 태그는 span, a, img, input, button, label, select, texta
 
 ## display : inline-block
 
-## display : flex
-
-## display : inline-flex
-
 ## display : none
