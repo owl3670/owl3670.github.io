@@ -38,4 +38,8 @@ inline 이 기본인 태그는 span, a, img, input, button, label, select, texta
 
 ## display : inline-block
 
+inline-block 은 inline 과 block 의 특징을 모두 가지고 있다.
+    
+{% include codepen.html hash="OJweJVK" title="display : inline-block" %}
+
 ## display : none
