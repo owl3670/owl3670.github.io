@@ -43,3 +43,7 @@ inline-block 은 inline 과 block 의 특징을 모두 가지고 있다.
 {% include codepen.html hash="OJweJVK" title="display : inline-block" %}
 
 ## display : none
+
+display : none 은 해당 요소를 화면에 표시하지 않는다.
+
+{% include codepen.html hash="NWBQwPV" title="display : none" %}
