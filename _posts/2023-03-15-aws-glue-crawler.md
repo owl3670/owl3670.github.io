@@ -27,5 +27,23 @@ AWS Glue Crawler 를 생성하기 위해 AWS Glue Console 에서 Data Catalog > 
 
 ![image](/assets/images/aws_glue_crawler/aws_glue_crawler_1.png)
 
-Crawlers > Add crawler 버튼을 클릭한다.
+Create Crawler 버튼을 클릭한다.
+
+![image](/assets/images/aws_glue_crawler/aws_glue_crawler_2.png)
+
+Crawler name 을 입력한다.
+
+![image](/assets/images/aws_glue_crawler/aws_glue_crawler_3.png)
+
+Crawler 가 탐색할 Datasource 를 추가 한다.
+
+![image](/assets/images/aws_glue_crawler/aws_glue_crawler_4.png)
+
+![image](/assets/images/aws_glue_crawler/aws_glue_crawler_5.png)
+
+폴더 탐색 옵션 설정 : Subsequent crawler runs
+
+- Crawl all sub-folders : 하위 폴더를 모두 탐색한다.
+- Crawl new sub-folders only : 새로 생성된 하위 폴더만 탐색한다.
+- Crawl based on events : 이벤트를 기반으로 탐색한다.
 
