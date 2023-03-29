@@ -47,3 +47,25 @@ Crawler 가 탐색할 Datasource 를 추가 한다.
 - Crawl new sub-folders only : 새로 생성된 하위 폴더만 탐색한다.
 - Crawl based on events : 이벤트를 기반으로 탐색한다.
 
+iam role 을 설정한다.
+
+![image](/assets/images/aws_glue_crawler/aws_glue_crawler_6.png)
+
+datacatalog 를 생성할 database 와 scheduling 을 설정한다.
+
+![image](/assets/images/aws_glue_crawler/aws_glue_crawler_7.png)
+
+![image](/assets/images/aws_glue_crawler/aws_glue_crawler_8.png)
+
+scheduling 옵션
+
+- On demand : 수동으로 실행한다.
+- Hourly
+- Daily
+- Weekly
+- Monthly
+- Custom : cron 표현식으로 실행 주기를 설정한다.
+
+입력한 내용을 확인 후 Crawler 를 생성한다.
+
+![image](/assets/images/aws_glue_crawler/aws_glue_crawler_9.png)
